@@ -301,9 +301,10 @@
 			$( '.show-if' ).each( function( index ) {
 				var element = $( this );
 				var parent_tag = element.parent().prop( 'nodeName' ).toLowerCase()
-				
+				var className = element.parent().prop('className');
+
 				// Field.
-				if ( 'td' === parent_tag || 'label' === parent_tag ) {
+				if ( 'td' === parent_tag || 'label' === parent_tag || className === 'wpsf-color') {
 					element.closest( 'tr' ).hide();
 
 					wpsf.maybe_show_element( element, function() {
@@ -321,7 +322,7 @@
 				}
 
 				// Section.
-				if ( 'div' === parent_tag ) {
+				if ( 'div' === parent_tag && className != 'wpsf-color') {
 					element.prev().hide();
 					element.next().hide();
 					if ( element.next().hasClass( 'wpsf-section-description' ) ) {
