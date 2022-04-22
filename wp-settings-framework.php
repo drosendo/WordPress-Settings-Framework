@@ -731,7 +731,8 @@ if ( ! class_exists( 'WordPressSettingsFramework' ) ) {
 			$checked       = ( $args['value'] ) ? 'checked="checked"' : '';
 
 			echo '<input type="hidden" name="' . $args['name'] . '" value="0" />';
-			echo '<label class="switch"><input type="checkbox" name="' . $args['name'] . '" id="' . $args['id'] . '" value="1" class="' . $args['class'] . '" ' . $checked . '> ' . $args['desc'] . '<span class="slider"></span></label>';
+			echo '<label class="switch"><input type="checkbox" name="' . $args['name'] . '" id="' . $args['id'] . '" value="1" class="' . $args['class'] . '" ' . $checked . '> <span class="slider"></span></label>';
+			$this->generate_description($args['desc']);
 		}
 
 		/**
