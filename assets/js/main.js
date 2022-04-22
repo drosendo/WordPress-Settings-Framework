@@ -481,20 +481,25 @@
 		/** 
 		 * Return the control value.
 		 */
-		get_controller_value: function( id ) {
-			var control = $( '#' + id );
-			
-			if ( 'checkbox' === control.attr( 'type' ) || 'radio' === control.attr( 'type' ) ) {
-				control = $( '#' + id + ':checked' );
-			}
+		get_controller_value: function(id) {
+		    var original_control = $('#' + id);
+		    var control = $('#' + id);
 
-			var value = control.val();
+		    if ('checkbox' === control.attr('type') || 'radio' === control.attr('type')) {
+			control = $('#' + id + ':checked');
+		    }
 
-			if ( typeof value === 'undefined' ) {
-				value = '';
-			}
+		    var value = control.val();
 
-			return value.toString();
+		    if ('checkbox' === original_control.attr('type') && typeof value === 'undefined') {
+			value = '0';
+		    }
+
+		    if (typeof value === 'undefined') {
+			value = '';
+		    }
+
+		    return value.toString();
 		},
 
 		/**
