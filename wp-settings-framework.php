@@ -766,7 +766,7 @@ if ( ! class_exists( 'WordPressSettingsFramework' ) ) {
 			$color_picker_id = sprintf( '%s_cp', $args['id'] );
 			$args['value']   = esc_attr( stripslashes( $args['value'] ) );
 
-			echo '<div style="position:relative;">';
+			echo '<div class="wpsf-color" style="position:relative;">';
 
 			echo sprintf( '<input type="text" name="%s" id="%s" value="%s" class="%s">', $args['name'], $args['id'], $args['value'], $args['class'] );
 
