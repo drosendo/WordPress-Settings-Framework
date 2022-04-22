@@ -1191,8 +1191,8 @@ endwhile;
 								}
 								$value_string .= $value;
 							}
-
-							if ( ! empty( $value_string ) ) {
+							
+							if (isset($value_string) && ($value_string === '0' || !empty($value_string))) {
 								$and_string .= $and_condition['field'] . '===' . $value_string;
 							}
 						}
